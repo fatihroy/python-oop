@@ -41,12 +41,15 @@ class Item:
                 quantity = int(item.get('kuantitas')),
             )
 
+    
+    
     def __repr__(self):
         # menampilkan secara otomatis dlm bentuk arraynya produk
         return f"item('{self.name}',{self.price},{self.quantity}) "
         
+        
     
-
-
 Item.ambil_dariCSV()
 print(Item.produk)
+
+
