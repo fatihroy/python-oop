@@ -1,3 +1,5 @@
+import csv #untuk csv
+# mengambil data dari csv
 # create class
 class Item:
     pembayaran = 0.5 #pembayaran setelah diskon 50%
@@ -22,17 +24,29 @@ class Item:
         # self.price = self.price * Item.pembayaran (dikali denagn Item.pembayaran)
         self.price = self.price * self.pembayaran # (dikali denagn self.pembayaran)
 
+    @classmethod
+    def ambil_dariCSV(cls):
+        with open('item.csv', 'r') as L: #ambil dari item.csv 
+            reader = csv.DictReader(L) #supaya data di item.csv terbaca
+            items = list(reader) #dijadikan list
+
+        # tampilkan satu persatu
+        for item in items:
+          
+            Item(
+                # mengambil nama, harga, kuantitas
+                name = item.get('nama'),
+                # mengubah jadi int krn semua yang ada di csv adalah string
+                price = float(item.get('harga')),
+                quantity = int(item.get('kuantitas')),
+            )
+
     def __repr__(self):
         # menampilkan secara otomatis dlm bentuk arraynya produk
         return f"item('{self.name}',{self.price},{self.quantity}) "
         
-item1 = Item('Letter', 10, 100)
-item2 = Item('Hvs', 5, 100)
-item3 = Item('Bag', 7, 100)
-item4 = Item('Pen', 10, 100)
-item5 = Item('book', 1, 10)
+    
 
-# menampilkan item1-item5 satu-satu
-# for i in Item.produk:
-#     print(i.name)
+
+Item.ambil_dariCSV()
 print(Item.produk)
