@@ -1,2 +1,2 @@
 sumber:
-free code camp python oop 13 october 2021(yt)
+free code camp (yt)"Object Oriented Programming With Python" (13 october 2021)
