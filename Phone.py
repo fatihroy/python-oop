@@ -1,7 +1,7 @@
 # import Item
 from Item import Item
 
-
+# phone mewarisi class Item
 class Phone(Item):
     
     def __init__(self, name:str, price:float, quantity=0, broken=0):

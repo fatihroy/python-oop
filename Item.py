@@ -68,7 +68,7 @@ class Item:
                 quantity = int(item.get('kuantitas')),
             )
 
-    def __connect(self, smpt_server):
+    def __connect(self):
         pass
     def __penawaran(self):
         return f"""
@@ -76,11 +76,11 @@ class Item:
         We have {self.__name}, {self.__price}, {self.quantity}
         Do you need it?
         """
-    def __kirim():
+    def __kirim(self):
         pass
 
     def kirim_email(self):
-        self.__connect('')
+        self.__connect()
         self.__penawaran()
         self.__kirim()
     
