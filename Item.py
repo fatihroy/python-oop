@@ -28,7 +28,7 @@ class Item:
     @property
     def price(self):
         return self.__price
-        
+
     @property
     # property decorator = Hanya Membaca di atribut
     def name(self): #supaya kalau ketik self.name maka hasilnya adalah self.name dan tidak bisa diubah
@@ -68,7 +68,21 @@ class Item:
                 quantity = int(item.get('kuantitas')),
             )
 
-    
+    def __connect(self, smpt_server):
+        pass
+    def __penawaran(self):
+        return f"""
+        Hey there
+        We have {self.__name}, {self.__price}, {self.quantity}
+        Do you need it?
+        """
+    def __kirim():
+        pass
+
+    def kirim_email(self):
+        self.__connect('')
+        self.__penawaran()
+        self.__kirim()
     
     def __repr__(self):
         # menampilkan secara otomatis dlm bentuk arraynya product

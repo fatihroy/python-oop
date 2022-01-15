@@ -2,11 +2,11 @@ from Item import Item
 # oop principles : encapsulation, abstraction, inherritance, polymorphism
 
 
-# 1. encapsulation --> supaya tidak bisa akses langsung
+# 2. abstraction --> menyembunyikan informasi yang gak perlu dan menampilkan informasi yang perlu
 item1 = Item('Item1', 313)
-item1.__price = 5 #tidak bisa diset 
 
-print(item1.price)
+item1.__connect() #gak bisa akses karena ini private method
+item1.kirim_email()
 
 
 
