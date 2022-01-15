@@ -16,12 +16,19 @@ class Item:
         # meng-assingn object
         # self.name = name tidak boleh seperti ini karena ada property
         self.__name = name
-        self.price = price
+        self.__price= price
         self.quantity = quantity
         
         # menambahkan item
         Item.product.append(self)
+
+    def new_method(self):
+        self.price
     
+    @property
+    def price(self):
+        return self.__price
+        
     @property
     # property decorator = Hanya Membaca di atribut
     def name(self): #supaya kalau ketik self.name maka hasilnya adalah self.name dan tidak bisa diubah
@@ -38,11 +45,11 @@ class Item:
          self.__name = val
 
     def calculate_total_price(self): #ini adalah method
-        return self.price*self.quantity #gak perlu parameters karena sudah tau
+        return self.__price*self.quantity #gak perlu parameters karena sudah tau
 
     def diskon(self):
         # self.price = self.price * Item.pembayaran (dikali denagn Item.pembayaran)
-        self.price = self.price * self.pembayaran # (dikali denagn self.pembayaran)
+        self.__price = self.__price * self.pembayaran # (dikali denagn self.pembayaran)
 
     @classmethod
     def ambil_dariCSV(cls):
